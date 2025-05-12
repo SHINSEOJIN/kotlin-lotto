@@ -29,7 +29,7 @@ fun inputMoney(): Int {
 }
 
 //로또번호 자동생성(보너스번호 포함)
-fun lottoMachine(): Pair<Set<Int>, Int> {
+fun lottoMachine(): Pair <Set<Int>, Int> {
     val numbers = mutableListOf<Int>()
 
     while (numbers.size < 6) {
