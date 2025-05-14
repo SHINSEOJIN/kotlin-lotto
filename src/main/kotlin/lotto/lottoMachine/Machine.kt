@@ -1,4 +1,4 @@
-package lotto
+package lotto.lottoMachine
 
 import kotlin.random.Random
 
@@ -8,25 +8,6 @@ class Lotto(private val numbers: List<Int>) {
     }
 }
 
-//구매금액 입력받기
-fun inputMoney(): Int {
-    while (true) {
-        println("구매할 금액을 입력하세요. (ex - 5000)")
-        val input = readLine() ?: continue
-        val moneyList = input.trim()
-            .split(Regex("\\s+"))
-            .mapNotNull { it.toIntOrNull() }
-
-        if (moneyList.size == 1) {
-            val money = moneyList[0]
-            if (money % 1000 == 0) {
-                return money
-            }
-        } else {
-            println("정확한 금액을 입력해주세요.")
-        }
-    }
-}
 
 //로또번호 자동생성(보너스번호 포함)
 fun lottoMachine(): Pair <Set<Int>, Int> {
