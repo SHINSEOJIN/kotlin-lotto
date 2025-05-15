@@ -2,8 +2,8 @@ package lotto.lottoMachine
 
 import kotlin.random.Random
 
-//로또번호 자동생성(보너스번호 포함)
-fun lottoMachine(): Pair <Set<Int>, Int> {
+//로또번호 자동생성
+fun lottoMachine(): Set<Int> {
     val winnumbers = mutableListOf<Int>()
 
     while (winnumbers.size < 6) {
@@ -12,9 +12,9 @@ fun lottoMachine(): Pair <Set<Int>, Int> {
             winnumbers.add(number)
         }
     }
-    var winbonus: Int
-    do {
-        winbonus = Random.nextInt(1, 46) //1~45까지
-    } while (winnumbers.contains(winbonus))
-    return Pair(winnumbers.toSet(), winbonus)
+//    var winbonus: Int
+//    do {
+//        winbonus = Random.nextInt(1, 46) //1~45까지
+//    } while (winnumbers.contains(winbonus))
+    return winnumbers.toSet()
 }

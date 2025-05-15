@@ -15,8 +15,7 @@ fun main() {
     val money = inputMoney()
 
     // 2. 금액에 따라 로또 발행 (1장 = 1000원)
-    val count = money / 1000
-    repeat(count) {
+    repeat(lottoCount) {
         generateLotto()  // userTickets에 자동 저장됨
     }
 
