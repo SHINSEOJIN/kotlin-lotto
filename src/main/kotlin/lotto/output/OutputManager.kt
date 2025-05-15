@@ -1,12 +1,12 @@
 package lotto.output
 
 import lotto.lottoMachine.*
+import lotto.input.inputMoney
 
 
-// 입력했던 로또 데이터 출력
+// 로또 데이터 출력
 fun outputLotto() {
-    println("현재 구매한 로또의 개수: ${userTickets.size}개")
-    //현재까지 구매한 로또 내역 출력
+    println("${userTickets.size}개를 구매했습니다.")
     println("[구입한 로또 목록]")
     userTickets.forEachIndexed { index, ticket ->
         println("${index + 1}번: ${ticket.numbers} + 보너스: ${ticket.bonus}")
@@ -14,8 +14,7 @@ fun outputLotto() {
 }
 
 // 당첨 여부 확인
-fun checkSuccess(): Map<Rank, Int> {
-    val (winNumbers, winBonus) = lottoMachine()
+fun checkSuccess(winNumbers: Set<Int>, winBonus: Int): Map<Rank, Int> {
     val rankCountMap = mutableMapOf<Rank, Int>()
 
     for (ticket in userTickets) {
